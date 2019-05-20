@@ -1,0 +1,16 @@
+{
+    "name": "WuKong",
+    "version": "0.0.4",
+    "description": "micro:bit multifunctional expansion board WuKong",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "neopixel": "github:microsoft/pxt-neopixel"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh/wukong-strings.json"
+    ],
+    "public": true
+}
