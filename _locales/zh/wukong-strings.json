@@ -1,9 +1,9 @@
 {
 	"WuKong|block": "悟空扩展板",
-	"WuKong.setlightMode|block": "设置灯光模式 %lightmode",
+	"WuKong.setlightMode|block": "设置灯光模式 %mode",
 	"WuKong.lightMode.breath|block": "呼吸灯",
 	"WuKong.lightMode.off|block": "关灯",
 	"WuKong.lightintensity|block": "设置灯光强度为 %light",
-	"WuKong.setservoangel|block": "设置伺服电机 %servoList|角度为 %angel",
-	"WuKong.setmotorSpeed|block": "设置电机 %motorList|速度为 %speed"
+	"WuKong.setservoangel|block": "设置伺服电机 %servp|角度 %angel",
+	"WuKong.setmotorSpeed|block": "设置电机 %motor|速度 %speed"
 } 
