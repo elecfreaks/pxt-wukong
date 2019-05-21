@@ -8,8 +8,8 @@
         "neopixel": "github:microsoft/pxt-neopixel"
     },
     "files": [
+		"main.ts",
         "README.md",
-        "main.ts",
         "_locales/zh/wukong-strings.json"
     ],
     "public": true
