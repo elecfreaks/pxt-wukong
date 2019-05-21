@@ -8,7 +8,7 @@ namespace WuKong {
     export enum lightMode {
     //% block="breath"
     breath,
-    //% block="turn off"
+    //% block="off"
     off
     }
 
@@ -39,7 +39,7 @@ namespace WuKong {
     }
 
     //% weight=90
-    //% blockId=lightMode block="Set light mode to %mode"
+    //% blockId="setlightMode" block="Set light mode to %mode"
     export function setlightMode(mode: lightMode): void {
         let buff = pins.createBuffer(4);
         switch (mode) {
@@ -70,7 +70,7 @@ namespace WuKong {
         }
     }
     //% weight=80
-    //% blockId=lightinstensity block="Set light intensity to %light"
+    //% blockId=lightintensity block="Set light intensity to %light"
     //% light.min=0 light.max=100
     export function lightintensity(light: number): void {
         let buff = pins.createBuffer(4);
@@ -84,7 +84,7 @@ namespace WuKong {
         buff[1] = 160;
         pins.i2cWriteBuffer(board_address, buff);
     }
-    //% blockId=motor block="Set motor %motor speed to %speed"
+    //% blockId=setmotorSpeed block="Set motor %motor speed to %speed"
     //% speed.min=-100 speed.max=100
     export function setmotorSpeed(motor: motorList, speed: number): void {
         let buf = pins.createBuffer(4);
@@ -115,7 +115,7 @@ namespace WuKong {
                 break;
         }
     }
-    //% blockId=servo block="Set servo %servo angel to %angle"
+    //% blockId=setservoangel block="Set servo %servo angel to %angle"
     //% angle.shadow="protractorPicker"
     export function setservoangel(servo: servoList, angel: number): void {
         let buf = pins.createBuffer(4);
