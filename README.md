@@ -1,6 +1,6 @@
 # Wukong expansion board
 
-![Wukong](.Wukong.jpg)
+![Wukong](./Wukong.jpg)
 
 This library is designed to drive Wukong expansion board , You can get Wukong board here.
 
