@@ -9,8 +9,10 @@
     },
     "files": [
 	"main.ts",
-        "README.md",
-        "_locales/zh/wukong-strings.json"
+        "README.md"
+    ],
+    "testFiles": [
+        "tests.ts"
     ],
     "public": true
 }
