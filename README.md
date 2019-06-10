@@ -4,7 +4,7 @@
 
 This library is designed to drive Wukong expansion board , You can get Wukong board here.
 
-[https://www.elecfreaks.com/store/Wukong.html](https://www.elecfreaks.com/store/Wukong.html)
+[https://www.elecfreaks.com/store/elecfreaks-wukong-breakout-board-for-micro-bit.html](https://www.elecfreaks.com/store/elecfreaks-wukong-breakout-board-for-micro-bit.html)
 
 ## Code Example
 ```JavaScript
