@@ -12,7 +12,7 @@
         "README.md"
     ],
     "testFiles": [
-        "tests.ts"
+        "test.ts"
     ],
     "public": true
 }
