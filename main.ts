@@ -78,9 +78,9 @@ namespace WuKong {
                 break;
         }
     }
-	
-	
-	
+
+
+
 	/**
     * TODO: Set the brightness of on-board LED lamp.
     * @param light brightness, eg: 100
@@ -100,14 +100,14 @@ namespace WuKong {
         buff[1] = 160;
         pins.i2cWriteBuffer(board_address, buff);
     }
-	
-	
+
+
 	/**
      * TODO: Set the speed of M1 or M2 motor. 
      * @param motor M1 or M2 motor , eg: motorList.M1
      * @param speed motor speed, eg: 100
      */
-	//% weight=88
+    //% weight=88
     //% blockId=setmotorSpeed block="Set motor %motor speed to %speed"
     //% speed.min=-100 speed.max=100
     export function setmotorSpeed(motor: motorList, speed: number): void {
@@ -144,20 +144,20 @@ namespace WuKong {
      * @param m1speed M1 motor speed , eg: 100
      * @param m2speed M2 motor speed, eg: -100
      */
-	//% weight=87
+    //% weight=87
     //% blockId=setallmotor block="set motor M1 speed %m1speed M2 speed %m2speed"
-	//% m1speed.min=-100 m1speed.max=100
+    //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
-    export function set_all_motor(lspeed: number, rspeed: number): void {
+    export function set_all_motor(m1speed: number, m2speed: number): void {
         setmotorSpeed(motorList.M1, m1speed)
         setmotorSpeed(motorList.M2, m2speed)
     }
-	
+
 	/*
      * TODO: Stop one of the motors. 
      * @param motor A motor in the motorlist , eg: motorList.M1
      */
-	//% weight=86
+    //% weight=86
     //% blockId=stoponemotor block="Stop motor %motor"
     export function stop_motor(motor: motorList): void {
         setmotorSpeed(motor, 0)
@@ -165,7 +165,7 @@ namespace WuKong {
 	/*
      * TODO: Stop all motors, including M1 and M2.
      */
-	//% weight=85
+    //% weight=85
     //% blockId=stopallmotor  block="Stop all motor"
     export function stop_all_motor(): void {
         setmotorSpeed(motorList.M1, 0)
@@ -177,7 +177,7 @@ namespace WuKong {
      * @param servo A servo in the servoList , eg: servoList.S1
      * @param angel Angle of servo motor , eg: 90
      */
-	//% weight=84
+    //% weight=84
     //% blockId=setservoangel block="Set servo %servo angel to %angle"
     //% angle.shadow="protractorPicker"
     export function setservoangel(servo: servoList, angel: number): void {
