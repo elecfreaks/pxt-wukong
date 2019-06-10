@@ -6,36 +6,36 @@ namespace WuKong {
     const board_address = 0x10
 
     export enum lightMode {
-    //% block="breath"
-    breath,
-    //% block="off"
-    off
+        //% block="breath"
+        breath,
+        //% block="off"
+        off
     }
 
     export enum motorList {
-    //% block="M1"
-    M1,
-    //% block="M2"
-    M2
+        //% block="M1"
+        M1,
+        //% block="M2"
+        M2
     }
 
     export enum servoList {
-    //% block="S0" enumval=0
-    s0,
-    //% block="S1" enumval=1
-    s1,
-    //% block="S2" enumval=2
-    s2,
-    //% block="S3" enumval=3
-    s3,
-    //% block="S4" enumval=4
-    s4,
-    //% block="S5" enumval=5
-    s5,
-    //% block="S6" enumval=6
-    s6,
-    //% block="S7" enumval=7
-    s7
+        //% block="S0" enumval=0
+        s0,
+        //% block="S1" enumval=1
+        s1,
+        //% block="S2" enumval=2
+        s2,
+        //% block="S3" enumval=3
+        s3,
+        //% block="S4" enumval=4
+        s4,
+        //% block="S5" enumval=5
+        s5,
+        //% block="S6" enumval=6
+        s6,
+        //% block="S7" enumval=7
+        s7
     }
 
     //% weight=90
@@ -115,6 +115,24 @@ namespace WuKong {
                 break;
         }
     }
+
+
+    //% blockId=setallmotor block="set motor M1 speed %lspeed M2 speed %rspeed"
+    export function set_all_motor(lspeed: number, rspeed: number): void {
+        setmotorSpeed(motorList.M1, lspeed)
+        setmotorSpeed(motorList.M2, rspeed)
+    }
+    //% blockId=stoponemotor block="Stop motor %motor"
+    export function stop_motor(motor: motorList): void {
+        setmotorSpeed(motor, 0)
+    }
+    //% blockId=stopallmotor  block="Stop all motor"
+    export function stop_all_motor(): void {
+        setmotorSpeed(motorList.M1, 0)
+        setmotorSpeed(motorList.M2, 0)
+    }
+
+
     //% blockId=setservoangel block="Set servo %servo angel to %angle"
     //% angle.shadow="protractorPicker"
     export function setservoangel(servo: servoList, angel: number): void {
