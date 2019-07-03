@@ -18,6 +18,6 @@
   "WuKong.setservoangel|block": "设置舵机 %servo 角度为 %angle",
   "WuKong.stop_all_motor|block": "停止所有电机",
   "WuKong.stop_motor|block": "停止电机 %motor",
-  "WuKong|block": "悟空扩展板",
+  "WuKong|block": "悟空",
   "{id:category}WuKong": "悟空"
 }
