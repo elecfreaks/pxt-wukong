@@ -8,8 +8,10 @@
         "neopixel": "github:microsoft/pxt-neopixel"
     },
     "files": [
-	"main.ts",
-        "README.md"
+        "main.ts",
+        "README.md",
+        "_locales/zh/WuKong-jsdoc-strings.json",
+        "_locales/zh/WuKong-strings.json"
     ],
     "testFiles": [
         "test.ts"

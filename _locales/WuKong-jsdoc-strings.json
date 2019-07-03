@@ -1,0 +1,13 @@
+{
+  "WuKong": "Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.",
+  "WuKong.lightMode": "Select the breathing lamp status",
+  "WuKong.lightintensity": "TODO: Set the brightness of on-board LED lamp.",
+  "WuKong.lightintensity|param|light": "brightness, eg: 100",
+  "WuKong.motorList": "Select the motor on the M1 or M2",
+  "WuKong.servoList": "servo list",
+  "WuKong.setlightMode": "TODO: Set the on-board LED display mode.",
+  "WuKong.setlightMode|param|mode": "breath or off , eg: lightMode.breath",
+  "WuKong.setmotorSpeed": "TODO: Set the speed of M1 or M2 motor.",
+  "WuKong.setmotorSpeed|param|motor": "M1 or M2 motor , eg: motorList.M1",
+  "WuKong.setmotorSpeed|param|speed": "motor speed, eg: 100"
+}
