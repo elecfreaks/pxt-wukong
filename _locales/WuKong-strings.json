@@ -1,0 +1,23 @@
+{
+  "WuKong.lightMode.breath|block": "breath",
+  "WuKong.lightMode.off|block": "off",
+  "WuKong.lightintensity|block": "Set light intensity to %light",
+  "WuKong.motorList.M1|block": "M1",
+  "WuKong.motorList.M2|block": "M2",
+  "WuKong.servoList.s0|block": "S0",
+  "WuKong.servoList.s1|block": "S1",
+  "WuKong.servoList.s2|block": "S2",
+  "WuKong.servoList.s3|block": "S3",
+  "WuKong.servoList.s4|block": "S4",
+  "WuKong.servoList.s5|block": "S5",
+  "WuKong.servoList.s6|block": "S6",
+  "WuKong.servoList.s7|block": "S7",
+  "WuKong.set_all_motor|block": "set motor M1 speed %m1speed M2 speed %m2speed",
+  "WuKong.setlightMode|block": "Set light mode to %mode",
+  "WuKong.setmotorSpeed|block": "Set motor %motor speed to %speed",
+  "WuKong.setservoangel|block": "Set servo %servo angel to %angle",
+  "WuKong.stop_all_motor|block": "Stop all motor",
+  "WuKong.stop_motor|block": "Stop motor %motor",
+  "WuKong|block": "WuKong",
+  "{id:category}WuKong": "WuKong"
+}
