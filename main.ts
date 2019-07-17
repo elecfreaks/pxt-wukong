@@ -8,9 +8,9 @@ namespace wuKong {
 	* LightMode
 	*/
     export enum LightMode {
-        //% block="breath"
+        //% block="BREATH"
         BREATH,
-        //% block="off"
+        //% block="OFF"
         OFF
     }
 	/**
@@ -104,7 +104,7 @@ namespace wuKong {
 
 	/**
      * TODO: Set the speed of M1 or M2 motor. 
-     * @param motor M1 or M2 motor , eg: motorList.M1
+     * @param motor M1 or M2 motor , eg: MotorList.M1
      * @param speed motor speed, eg: 100
      */
     //% weight=88
@@ -155,7 +155,7 @@ namespace wuKong {
 
 	/*
      * TODO: Stop one of the motors. 
-     * @param motor A motor in the motorlist , eg: motorList.M1
+     * @param motor A motor in the MotorList , eg: MotorList.M1
      */
     //% weight=86
     //% blockId=stopMotor block="Stop motor %motor"
@@ -174,7 +174,7 @@ namespace wuKong {
 
 	/*
      * TODO: Setting the angle of a servo motor. 
-     * @param servo A servo in the servoList , eg: servoList.S1
+     * @param servo A servo in the ServoList , eg: ServoList.S1
      * @param angel Angle of servo motor , eg: 90
      */
     //% weight=84
