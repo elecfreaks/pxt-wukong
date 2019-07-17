@@ -8,24 +8,21 @@ This library is designed to drive Wukong expansion board , You can get Wukong bo
 
 ## Code Example
 ```JavaScript
-let speed = 0
-let flag = false
-WuKong.setlightMode(WuKong.lightMode.breath)
-flag = true
-basic.forever(function () {
-    if (speed == 100) {
-        flag = false
-    } else if (speed == -100) {
-        flag = true
-    }
-    if (flag) {
-        speed += 1
-    } else {
-        speed += -1
-    }
-    WuKong.setmotorSpeed(WuKong.motorList.M1, speed)
-    WuKong.setmotorSpeed(WuKong.motorList.M2, speed)
+input.onButtonPressed(Button.A, function () {
+    wuKong.setAllMotor(100, -100)
 })
+input.onButtonPressed(Button.AB, function () {
+    wuKong.stopAllMotor()
+})
+input.onButtonPressed(Button.B, function () {
+    wuKong.setServoAngel(wuKong.ServoList.S0, 360)
+    wuKong.setServoAngel(wuKong.ServoList.S2, 180)
+    wuKong.setServoAngel(wuKong.ServoList.S4, 90)
+    wuKong.setServoAngel(wuKong.ServoList.S6, 0)
+})
+basic.showIcon(IconNames.Heart)
+wuKong.setLightMode(wuKong.LightMode.BREATH)
+
 ```
 ## Supported targets
 for PXT/microbit
