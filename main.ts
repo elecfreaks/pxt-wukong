@@ -5,7 +5,7 @@
 namespace wuKong {
     const board_address = 0x10
 	/**
-	* Select the breathing lamp status
+	* LightMode
 	*/
     export enum LightMode {
         //% block="breath"
@@ -14,7 +14,7 @@ namespace wuKong {
         OFF
     }
 	/**
-	* Select the motor on the M1 or M2
+	* MotorList
 	*/
     export enum MotorList {
         //% block="M1"
