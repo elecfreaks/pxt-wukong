@@ -1,0 +1,23 @@
+{
+  "wuKong.LightMode.BREATH|block": "呼吸灯",
+  "wuKong.LightMode.OFF|block": "关闭",
+  "wuKong.MotorList.M1|block": "M1",
+  "wuKong.MotorList.M2|block": "M2",
+  "wuKong.ServoList.S0|block": "S0",
+  "wuKong.ServoList.S1|block": "S1",
+  "wuKong.ServoList.S2|block": "S2",
+  "wuKong.ServoList.S3|block": "S3",
+  "wuKong.ServoList.S4|block": "S4",
+  "wuKong.ServoList.S5|block": "S5",
+  "wuKong.ServoList.S6|block": "S6",
+  "wuKong.ServoList.S7|block": "S7",
+  "wuKong.lightIntensity|block": "设置氛围灯亮度为 %light",
+  "wuKong.setAllMotor|block": "设置电机M1的速度为 %m1speed 电机M2的速度为 %m2speed",
+  "wuKong.setLightMode|block": "设置氛围灯模式 %mode",
+  "wuKong.setMotorSpeed|block": "设置电机 %motor 速度为 %speed",
+  "wuKong.setServoAngel|block": "设置舵机 %servo 角度为 %angle",
+  "wuKong.stopAllMotor|block": "停止所有电机",
+  "wuKong.stopMotor|block": "停止电机 %motor",
+  "wuKong|block": "悟空",
+  "{id:category}WuKong": "悟空"
+}

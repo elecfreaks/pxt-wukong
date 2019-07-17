@@ -1,5 +1,5 @@
 {
-    "name": "WuKong",
+    "name": "wuKong",
     "version": "1.0.0",
     "description": "micro:bit multifunctional expansion board WuKong",
     "license": "MIT",
@@ -9,9 +9,7 @@
     },
     "files": [
         "main.ts",
-        "README.md",
-        "_locales/zh/WuKong-jsdoc-strings.json",
-        "_locales/zh/WuKong-strings.json"
+        "README.md"
     ],
     "testFiles": [
         "test.ts"

@@ -1,7 +1,7 @@
 /**
  * Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
  */
-//% color=#ff7f24  icon="\uf0c2" block="WuKong"
+//% color=#ff7f24  icon="\uf0c2" block="wuKong" blockId="wuKong"
 namespace wuKong {
     const board_address = 0x10
 	/**
@@ -23,7 +23,7 @@ namespace wuKong {
         M2
     }
 	/**
-	* servo list
+	* ServoList
 	*/
     export enum ServoList {
         //% block="S0" enumval=0
@@ -45,14 +45,14 @@ namespace wuKong {
     }
     /**
      * TODO: Set the on-board LED display mode. 
-     * @param mode breath or off , eg: lightMode.breath
+     * @param mode breath or off , eg: LightMode.BREATH
      */
     //% weight=90
-    //% blockId="setlightMode" block="Set light mode to %mode"
-    export function setLightMode(mode: lightMode): void {
+    //% blockId="setLightMode" block="Set light mode to %mode"
+    export function setLightMode(mode: LightMode): void {
         let buff = pins.createBuffer(4);
         switch (mode) {
-            case lightMode.breath:
+            case LightMode.BREATH:
                 buff[0] = 0x11;
                 buff[1] = 0x00;
                 buff[2] = 0;
@@ -63,7 +63,7 @@ namespace wuKong {
                 basic.pause(100);
                 pins.i2cWriteBuffer(board_address, buff);
                 break;
-            case lightMode.off:
+            case LightMode.OFF:
                 buff[0] = 0x12;
                 buff[1] = 0;
                 buff[2] = 0;
@@ -86,7 +86,7 @@ namespace wuKong {
     * @param light brightness, eg: 100
     */
     //% weight=89
-    //% blockId=lightintensity block="Set light intensity to %light"
+    //% blockId=lightIntensity block="Set light intensity to %light"
     //% light.min=0 light.max=100
     export function lightIntensity(light: number): void {
         let buff = pins.createBuffer(4);
@@ -108,12 +108,12 @@ namespace wuKong {
      * @param speed motor speed, eg: 100
      */
     //% weight=88
-    //% blockId=setmotorSpeed block="Set motor %motor speed to %speed"
+    //% blockId=setMotorSpeed block="Set motor %motor speed to %speed"
     //% speed.min=-100 speed.max=100
-    export function setMotorSpeed(motor: motorList, speed: number): void {
+    export function setMotorSpeed(motor: MotorList, speed: number): void {
         let buf = pins.createBuffer(4);
         switch (motor) {
-            case motorList.M1:
+            case MotorList.M1:
                 buf[0] = 0x01;
                 buf[1] = 0x01;
                 if (speed < 0) {
@@ -124,7 +124,7 @@ namespace wuKong {
                 buf[3] = 0;
                 pins.i2cWriteBuffer(board_address, buf);
                 break;
-            case motorList.M2:
+            case MotorList.M2:
                 buf[0] = 0x02;
                 buf[1] = 0x01;
                 if (speed < 0) {
@@ -145,12 +145,12 @@ namespace wuKong {
      * @param m2speed M2 motor speed, eg: -100
      */
     //% weight=87
-    //% blockId=setallmotor block="set motor M1 speed %m1speed M2 speed %m2speed"
+    //% blockId=setAllMotor block="set motor M1 speed %m1speed M2 speed %m2speed"
     //% m1speed.min=-100 m1speed.max=100
     //% m2speed.min=-100 m2speed.max=100
     export function setAllMotor(m1speed: number, m2speed: number): void {
-        setmotorSpeed(motorList.M1, m1speed)
-        setmotorSpeed(motorList.M2, m2speed)
+        setMotorSpeed(MotorList.M1, m1speed)
+        setMotorSpeed(MotorList.M2, m2speed)
     }
 
 	/*
@@ -158,18 +158,18 @@ namespace wuKong {
      * @param motor A motor in the motorlist , eg: motorList.M1
      */
     //% weight=86
-    //% blockId=stoponemotor block="Stop motor %motor"
-    export function stopMotor(motor: motorList): void {
-        setmotorSpeed(motor, 0)
+    //% blockId=stopMotor block="Stop motor %motor"
+    export function stopMotor(motor: MotorList): void {
+        setMotorSpeed(motor, 0)
     }
 	/*
      * TODO: Stop all motors, including M1 and M2.
      */
     //% weight=85
-    //% blockId=stopallmotor  block="Stop all motor"
+    //% blockId=stopAllMotor  block="Stop all motor"
     export function stopAllMotor(): void {
-        setmotorSpeed(motorList.M1, 0)
-        setmotorSpeed(motorList.M2, 0)
+        setMotorSpeed(MotorList.M1, 0)
+        setMotorSpeed(MotorList.M2, 0)
     }
 
 	/*
@@ -178,9 +178,9 @@ namespace wuKong {
      * @param angel Angle of servo motor , eg: 90
      */
     //% weight=84
-    //% blockId=setservoangel block="Set servo %servo angel to %angle"
+    //% blockId=setServoAngel block="Set servo %servo angel to %angle"
     //% angle.shadow="protractorPicker"
-    export function setServoAngel(servo: servoList, angel: number): void {
+    export function setServoAngel(servo: ServoList, angel: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
             buf[0] = 0x03;
