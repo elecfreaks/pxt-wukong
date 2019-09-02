@@ -505,8 +505,8 @@ namespace wuKong {
                 break;
             case 8:
                 setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, 180)
-                setServoAngel(RightFront_def, 0)
+                setServoAngel(LeftRear_def, 0)
+                setServoAngel(RightFront_def, 180)
                 setServoAngel(RightRear_def, 90)
                 break;
         }
