@@ -257,10 +257,10 @@ namespace wuKong {
     }
     /**
     * TODO: Set Mecanum wheel car 
-    * @param LeftFront A servo in the ServoList , eg: ServoList.S0
-    * @param LeftRear A servo in the ServoList , eg: ServoList.S1
-    * @param RightFront A servo in the ServoList , eg: ServoList.S2
-    * @param RightRear A servo in the ServoList , eg: ServoList.S3
+    * @param LeftFront A servo in the ServoList , eg: wuKong.ServoList.S1
+    * @param LeftRear A servo in the ServoList , eg: wuKong.ServoList.S2
+    * @param RightFront A servo in the ServoList , eg: wuKong.ServoList.S3
+    * @param RightRear A servo in the ServoList , eg: wuKong.ServoList.S4
     */
     //% block="Set Mecaum wheel|Left Front %LeftFront|Left Rear %LeftRear|Right Front %RightFront|Right Rear %RightRear"
     //% subcategory=Mecanum
