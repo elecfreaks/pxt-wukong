@@ -28,7 +28,7 @@
   "wuKong.WheelList.RightRear_def|block": "右后",
   "wuKong.lightIntensity|block": "设置氛围灯亮度为 %light",
   "wuKong.mecanumDrift|block": "麦克纳姆轮小车向%Turn漂移",
-  "wuKong.mecanumRun|block": "麦克纳姆轮小车向 %type 移动",
+  "wuKong.mecanumRun|block": "麦克纳姆轮小车向 %type 移动速度为 %speed",
   "wuKong.mecanumSpeed|block": "设置麦克纳姆轮小车 %wheel 轮 速度为 %speed",
   "wuKong.mecanumSpin|block": "麦克纳姆轮小车向 %Turn 旋转",
   "wuKong.mecanumStop|block": "麦克纳姆轮小车停止",

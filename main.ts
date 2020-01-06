@@ -262,7 +262,7 @@ namespace wuKong {
     * @param RightFront A servo in the ServoList , eg: wuKong.ServoList.S3
     * @param RightRear A servo in the ServoList , eg: wuKong.ServoList.S4
     */
-    //% block="Set Mecaum wheel|Left Front %LeftFront|Left Rear %LeftRear|Right Front %RightFront|Right Rear %RightRear"
+    //% block="Set Mecanum wheel|Left Front %LeftFront|Left Rear %LeftRear|Right Front %RightFront|Right Rear %RightRear"
     //% subcategory=Mecanum
     export function mecanumWheel(LeftFront: ServoList, LeftRear: ServoList, RightFront: ServoList, RightRear: ServoList): void {
         LeftFront_def = LeftFront
@@ -449,64 +449,71 @@ namespace wuKong {
     /**
    * TODO: Set car runs direction
    */
-    //% block="Set Mecanum car runs direction %type"
+    //% block="Set Mecanum car runs direction %type with speed %speed"
     //% subcategory=Mecanum
     //% type.fieldEditor="gridpicker"
     //% type.fieldOptions.columns=3
-    export function mecanumRun(type: RunList): void {
+    //% speed.min=0 speed.max=100
+    export function mecanumRun(type: RunList,speed: number): void {
+        let servospeed:number = 0;
+        if (speed < 0) {
+            speed = 0;
+        }
+        servospeed = Math.map(speed, 0, 100, 90, 0)
+        Math.floor(servospeed)
         switch (type) {
             case 0:
-                setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, 180)
-                setServoAngel(RightFront_def, 0)
+                setServoAngel(LeftFront_def, 90 )
+                setServoAngel(LeftRear_def, 180 - servospeed)
+                setServoAngel(RightFront_def, servospeed +0 )
                 setServoAngel(RightRear_def, 90)
                 break;
             case 1:
-                setServoAngel(LeftFront_def, 180)
-                setServoAngel(LeftRear_def, 180)
-                setServoAngel(RightFront_def, 0)
-                setServoAngel(RightRear_def, 0)
+                setServoAngel(LeftFront_def, 180 - servospeed)
+                setServoAngel(LeftRear_def, 180 - servospeed)
+                setServoAngel(RightFront_def, servospeed + 0)
+                setServoAngel(RightRear_def, servospeed + 0)
                 break;
             case 2:
-                setServoAngel(LeftFront_def, 180)
+                setServoAngel(LeftFront_def, 180 - servospeed)
                 setServoAngel(LeftRear_def, 90)
                 setServoAngel(RightFront_def, 90)
-                setServoAngel(RightRear_def, 0)
+                setServoAngel(RightRear_def, servospeed +0)
                 break;
             case 3:
-                setServoAngel(LeftFront_def, 0)
-                setServoAngel(LeftRear_def, 180)
-                setServoAngel(RightFront_def, 0)
-                setServoAngel(RightRear_def, 180)
+                setServoAngel(LeftFront_def, servospeed +0 )
+                setServoAngel(LeftRear_def, 180 - servospeed)
+                setServoAngel(RightFront_def, servospeed +0)
+                setServoAngel(RightRear_def, 180- servospeed)
                 break;
             case 4:
                 setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, 90)
+                setServoAngel(LeftRear_def, 90 )
                 setServoAngel(RightFront_def, 90)
                 setServoAngel(RightRear_def, 90)
                 break;
             case 5:
-                setServoAngel(LeftFront_def, 180)
-                setServoAngel(LeftRear_def, 0)
-                setServoAngel(RightFront_def, 180)
-                setServoAngel(RightRear_def, 0)
+                setServoAngel(LeftFront_def, 180 - servospeed)
+                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(RightFront_def, 180 - servospeed)
+                setServoAngel(RightRear_def, servospeed +0)
                 break;
             case 6:
-                setServoAngel(LeftFront_def, 0)
+                setServoAngel(LeftFront_def, servospeed +0 )
                 setServoAngel(LeftRear_def, 90)
                 setServoAngel(RightFront_def, 90)
-                setServoAngel(RightRear_def, 180)
+                setServoAngel(RightRear_def, 180- servospeed)
                 break;
             case 7:
-                setServoAngel(LeftFront_def, 0)
-                setServoAngel(LeftRear_def, 0)
-                setServoAngel(RightFront_def, 180)
-                setServoAngel(RightRear_def, 180)
+                setServoAngel(LeftFront_def, servospeed +0)
+                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(RightFront_def, 180 - servospeed)
+                setServoAngel(RightRear_def, 180 - servospeed)
                 break;
             case 8:
                 setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, 0)
-                setServoAngel(RightFront_def, 180)
+                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(RightFront_def, 180 - servospeed)
                 setServoAngel(RightRear_def, 90)
                 break;
         }
