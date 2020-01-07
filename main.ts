@@ -1,6 +1,6 @@
 /**
- * Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
- */
+* Functions to WuKong multifunctional expansion board by ELECFREAKS Co.,Ltd.
+*/
 //% color=#ff7f24  icon="\uf0c2" block="wuKong" blockId="wuKong"
 namespace wuKong {
     const board_address = 0x10
@@ -229,6 +229,18 @@ namespace wuKong {
         //% block="Right Rear"
         RightRear_def
     }
+    /**
+     * SideList
+     */
+    export enum SideList {
+        //% block="Left Side"
+        Left_Side,
+        //% block="Right Side"
+        Right_Side
+    }
+    /**
+     * 8 run
+     */
     export enum RunList {
         //% block="↖" 
         LeftFront,
@@ -447,6 +459,23 @@ namespace wuKong {
         pins.i2cWriteBuffer(board_address, buf);
     }
     /**
+    * TODO: Set side servo speed
+    */
+    //% block="Set %wheelside wheel speed to %speed"
+    //% subcategory=Mecanum
+    export function mecanumSideRun(wheelside: SideList, speed: number): void {
+        switch (wheelside) {
+            case 0:
+                mecanumSpeed(WheelList.LeftFront_def, speed)
+                mecanumSpeed(WheelList.LeftRear_def, speed)
+                break;
+            case 1:
+                mecanumSpeed(WheelList.RightFront_def, speed)
+                mecanumSpeed(WheelList.RightRear_def, speed)
+                break;
+        }
+    }
+    /**
    * TODO: Set car runs direction
    */
     //% block="Set Mecanum car runs direction %type with speed %speed"
@@ -454,8 +483,8 @@ namespace wuKong {
     //% type.fieldEditor="gridpicker"
     //% type.fieldOptions.columns=3
     //% speed.min=0 speed.max=100
-    export function mecanumRun(type: RunList,speed: number): void {
-        let servospeed:number = 0;
+    export function mecanumRun(type: RunList, speed: number): void {
+        let servospeed: number = 0;
         if (speed < 0) {
             speed = 0;
         }
@@ -463,9 +492,9 @@ namespace wuKong {
         Math.floor(servospeed)
         switch (type) {
             case 0:
-                setServoAngel(LeftFront_def, 90 )
+                setServoAngel(LeftFront_def, 90)
                 setServoAngel(LeftRear_def, 180 - servospeed)
-                setServoAngel(RightFront_def, servospeed +0 )
+                setServoAngel(RightFront_def, servospeed + 0)
                 setServoAngel(RightRear_def, 90)
                 break;
             case 1:
@@ -478,41 +507,41 @@ namespace wuKong {
                 setServoAngel(LeftFront_def, 180 - servospeed)
                 setServoAngel(LeftRear_def, 90)
                 setServoAngel(RightFront_def, 90)
-                setServoAngel(RightRear_def, servospeed +0)
+                setServoAngel(RightRear_def, servospeed + 0)
                 break;
             case 3:
-                setServoAngel(LeftFront_def, servospeed +0 )
+                setServoAngel(LeftFront_def, servospeed + 0)
                 setServoAngel(LeftRear_def, 180 - servospeed)
-                setServoAngel(RightFront_def, servospeed +0)
-                setServoAngel(RightRear_def, 180- servospeed)
+                setServoAngel(RightFront_def, servospeed + 0)
+                setServoAngel(RightRear_def, 180 - servospeed)
                 break;
             case 4:
                 setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, 90 )
+                setServoAngel(LeftRear_def, 90)
                 setServoAngel(RightFront_def, 90)
                 setServoAngel(RightRear_def, 90)
                 break;
             case 5:
                 setServoAngel(LeftFront_def, 180 - servospeed)
-                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(LeftRear_def, servospeed + 0)
                 setServoAngel(RightFront_def, 180 - servospeed)
-                setServoAngel(RightRear_def, servospeed +0)
+                setServoAngel(RightRear_def, servospeed + 0)
                 break;
             case 6:
-                setServoAngel(LeftFront_def, servospeed +0 )
+                setServoAngel(LeftFront_def, servospeed + 0)
                 setServoAngel(LeftRear_def, 90)
                 setServoAngel(RightFront_def, 90)
-                setServoAngel(RightRear_def, 180- servospeed)
+                setServoAngel(RightRear_def, 180 - servospeed)
                 break;
             case 7:
-                setServoAngel(LeftFront_def, servospeed +0)
-                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(LeftFront_def, servospeed + 0)
+                setServoAngel(LeftRear_def, servospeed + 0)
                 setServoAngel(RightFront_def, 180 - servospeed)
                 setServoAngel(RightRear_def, 180 - servospeed)
                 break;
             case 8:
                 setServoAngel(LeftFront_def, 90)
-                setServoAngel(LeftRear_def, servospeed +0)
+                setServoAngel(LeftRear_def, servospeed + 0)
                 setServoAngel(RightFront_def, 180 - servospeed)
                 setServoAngel(RightRear_def, 90)
                 break;
@@ -532,23 +561,30 @@ namespace wuKong {
     /**
    * TODO: Set car spin 
    */
-    //% block="Set Mecanum car spin %Turn"
+    //% block="Set Mecanum car spin %Turn with speed %speed"
     //% subcategory=Mecanum
     //% Turn.fieldEditor="gridpicker"
     //% Turn.fieldOptions.columns=2
-    export function mecanumSpin(Turn: TurnList): void {
+    //% speed.min=0 speed.max=100
+    export function mecanumSpin(Turn: TurnList, speed: number): void {
+        let servospeed: number = 0;
+        if (speed < 0) {
+            speed = 0;
+        }
+        servospeed = Math.map(speed, 0, 100, 90, 0)
+        Math.floor(servospeed)
         switch (Turn) {
             case 0:
-                setServoAngel(LeftFront_def, 0)
-                setServoAngel(LeftRear_def, 0)
-                setServoAngel(RightFront_def, 0)
-                setServoAngel(RightRear_def, 0)
+                setServoAngel(LeftFront_def, 0 + servospeed)
+                setServoAngel(LeftRear_def, 0 + servospeed)
+                setServoAngel(RightFront_def, 0 + servospeed)
+                setServoAngel(RightRear_def, 0 + servospeed)
                 break;
             case 1:
-                setServoAngel(LeftFront_def, 180)
-                setServoAngel(LeftRear_def, 180)
-                setServoAngel(RightFront_def, 180)
-                setServoAngel(RightRear_def, 180)
+                setServoAngel(LeftFront_def, 180 - servospeed)
+                setServoAngel(LeftRear_def, 180 - servospeed)
+                setServoAngel(RightFront_def, 180 - servospeed)
+                setServoAngel(RightRear_def, 180 - servospeed)
                 break;
         }
     }
@@ -576,3 +612,4 @@ namespace wuKong {
         }
     }
 }
+ 
