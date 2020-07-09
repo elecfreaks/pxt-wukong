@@ -282,7 +282,6 @@ namespace wuKong {
         RightFront_def = RightFront
         RightRear_def = RightRear
     }
-
     /**
     * TODO: Set servo speed
     */
