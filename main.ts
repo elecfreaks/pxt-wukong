@@ -317,7 +317,6 @@ namespace wuKong {
                 }
             }
         }
-
         switch (wheel) {
             case 0:
                 if (LeftFront_def == 0) {
