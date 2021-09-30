@@ -178,9 +178,9 @@ namespace wuKong {
      * @param angel Angle of servo motor , eg: 90
      */
     //% weight=84
-    //% blockId=setServoAngel block="Set servo %servo angel to %angle"
+    //% blockId=setServoAngle block="Set servo %servo angle to %angle"
     //% angle.shadow="protractorPicker"
-    export function setServoAngel(servo: ServoList, angel: number): void {
+    export function setServoAngle(servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
             buf[0] = 0x03;
@@ -206,7 +206,7 @@ namespace wuKong {
         if (servo == 7) {
             buf[0] = 0x10;
         }
-        buf[1] = angel;
+        buf[1] = angle;
         buf[2] = 0;
         buf[3] = 0;
         pins.i2cWriteBuffer(board_address, buf);
