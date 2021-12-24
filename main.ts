@@ -44,6 +44,18 @@ namespace wuKong {
         S7
     }
     /**
+    * ServoTypeList
+    */
+    export enum ServoTypeList {
+        //% block="180°" 
+        _180,
+        //% block="270°"
+        _270,
+        //% block="360°" 
+        _360
+    }
+
+    /**
      * TODO: Set the on-board LED display mode. 
      * @param mode breath or off , eg: LightMode.BREATH
      */
@@ -178,9 +190,9 @@ namespace wuKong {
      * @param angel Angle of servo motor , eg: 90
      */
     //% weight=84
-    //% blockId=setServoAngle block="Set servo %servo angle to %angle"
+    //% blockId=setServoAngle block="Set %servoType servo %servo angle to %angle"
     //% angle.shadow="protractorPicker"
-    export function setServoAngle(servo: ServoList, angle: number): void {
+    export function setServoAngle(servoType: ServoTypeList, servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
             buf[0] = 0x03;
@@ -206,6 +218,19 @@ namespace wuKong {
         if (servo == 7) {
             buf[0] = 0x10;
         }
+
+        switch (servoType) {
+            case ServoTypeList._180:
+                angle = Math.map(angle, 0, 180, 0, 180)
+                break
+            case ServoTypeList._270:
+                angle = Math.map(angle, 0, 270, 0, 180)
+                break
+            case ServoTypeList._360:
+                angle = Math.map(angle, 0, 360, 0, 180)
+                break
+        }
+
         buf[1] = angle;
         buf[2] = 0;
         buf[3] = 0;
@@ -490,58 +515,58 @@ namespace wuKong {
         Math.floor(servospeed)
         switch (type) {
             case 0:
-                setServoAngle(LeftFront_def, 90)
-                setServoAngle(LeftRear_def, 180 - servospeed)
-                setServoAngle(RightFront_def, servospeed + 0)
-                setServoAngle(RightRear_def, 90)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 90)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightRear_def, 90)
                 break;
             case 1:
-                setServoAngle(LeftFront_def, 180 - servospeed)
-                setServoAngle(LeftRear_def, 180 - servospeed)
-                setServoAngle(RightFront_def, servospeed + 0)
-                setServoAngle(RightRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightRear_def, servospeed + 0)
                 break;
             case 2:
-                setServoAngle(LeftFront_def, 180 - servospeed)
-                setServoAngle(LeftRear_def, 90)
-                setServoAngle(RightFront_def, 90)
-                setServoAngle(RightRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 90)
+                setServoAngle(ServoTypeList._180,RightFront_def, 90)
+                setServoAngle(ServoTypeList._180,RightRear_def, servospeed + 0)
                 break;
             case 3:
-                setServoAngle(LeftFront_def, servospeed + 0)
-                setServoAngle(LeftRear_def, 180 - servospeed)
-                setServoAngle(RightFront_def, servospeed + 0)
-                setServoAngle(RightRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightRear_def, 180 - servospeed)
                 break;
             case 4:
-                setServoAngle(LeftFront_def, 90)
-                setServoAngle(LeftRear_def, 90)
-                setServoAngle(RightFront_def, 90)
-                setServoAngle(RightRear_def, 90)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 90)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 90)
+                setServoAngle(ServoTypeList._180,RightFront_def, 90)
+                setServoAngle(ServoTypeList._180,RightRear_def, 90)
                 break;
             case 5:
-                setServoAngle(LeftFront_def, 180 - servospeed)
-                setServoAngle(LeftRear_def, servospeed + 0)
-                setServoAngle(RightFront_def, 180 - servospeed)
-                setServoAngle(RightRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightRear_def, servospeed + 0)
                 break;
             case 6:
-                setServoAngle(LeftFront_def, servospeed + 0)
-                setServoAngle(LeftRear_def, 90)
-                setServoAngle(RightFront_def, 90)
-                setServoAngle(RightRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 90)
+                setServoAngle(ServoTypeList._180,RightFront_def, 90)
+                setServoAngle(ServoTypeList._180,RightRear_def, 180 - servospeed)
                 break;
             case 7:
-                setServoAngle(LeftFront_def, servospeed + 0)
-                setServoAngle(LeftRear_def, servospeed + 0)
-                setServoAngle(RightFront_def, 180 - servospeed)
-                setServoAngle(RightRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftFront_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,LeftRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightRear_def, 180 - servospeed)
                 break;
             case 8:
-                setServoAngle(LeftFront_def, 90)
-                setServoAngle(LeftRear_def, servospeed + 0)
-                setServoAngle(RightFront_def, 180 - servospeed)
-                setServoAngle(RightRear_def, 90)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 90)
+                setServoAngle(ServoTypeList._180,LeftRear_def, servospeed + 0)
+                setServoAngle(ServoTypeList._180,RightFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightRear_def, 90)
                 break;
         }
     }
@@ -551,10 +576,10 @@ namespace wuKong {
     //% block="Set Mecanum car Stop"
     //% subcategory=Mecanum weight=80
     export function mecanumStop(): void {
-        setServoAngle(LeftFront_def, 90)
-        setServoAngle(LeftRear_def, 90)
-        setServoAngle(RightFront_def, 90)
-        setServoAngle(RightRear_def, 90)
+        setServoAngle(ServoTypeList._180,LeftFront_def, 90)
+        setServoAngle(ServoTypeList._180,LeftRear_def, 90)
+        setServoAngle(ServoTypeList._180,RightFront_def, 90)
+        setServoAngle(ServoTypeList._180,RightRear_def, 90)
     }
     /**
    * TODO: Set car spin 
@@ -573,16 +598,16 @@ namespace wuKong {
         Math.floor(servospeed)
         switch (Turn) {
             case 0:
-                setServoAngle(LeftFront_def, 0 + servospeed)
-                setServoAngle(LeftRear_def, 0 + servospeed)
-                setServoAngle(RightFront_def, 0 + servospeed)
-                setServoAngle(RightRear_def, 0 + servospeed)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 0 + servospeed)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 0 + servospeed)
+                setServoAngle(ServoTypeList._180,RightFront_def, 0 + servospeed)
+                setServoAngle(ServoTypeList._180,RightRear_def, 0 + servospeed)
                 break;
             case 1:
-                setServoAngle(LeftFront_def, 180 - servospeed)
-                setServoAngle(LeftRear_def, 180 - servospeed)
-                setServoAngle(RightFront_def, 180 - servospeed)
-                setServoAngle(RightRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightFront_def, 180 - servospeed)
+                setServoAngle(ServoTypeList._180,RightRear_def, 180 - servospeed)
                 break;
         }
     }
@@ -596,16 +621,16 @@ namespace wuKong {
     export function mecanumDrift(Turn: TurnList): void {
         switch (Turn) {
             case 0:
-                setServoAngle(LeftFront_def, 70)
-                setServoAngle(LeftRear_def, 180)
-                setServoAngle(RightFront_def, 70)
-                setServoAngle(RightRear_def, 180)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 70)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 180)
+                setServoAngle(ServoTypeList._180,RightFront_def, 70)
+                setServoAngle(ServoTypeList._180,RightRear_def, 180)
                 break;
             case 1:
-                setServoAngle(LeftFront_def, 110)
-                setServoAngle(LeftRear_def, 0)
-                setServoAngle(RightFront_def, 110)
-                setServoAngle(RightRear_def, 0)
+                setServoAngle(ServoTypeList._180,LeftFront_def, 110)
+                setServoAngle(ServoTypeList._180,LeftRear_def, 0)
+                setServoAngle(ServoTypeList._180,RightFront_def, 110)
+                setServoAngle(ServoTypeList._180,RightRear_def, 0)
                 break;
         }
     }
