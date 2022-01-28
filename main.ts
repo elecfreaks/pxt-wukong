@@ -191,7 +191,7 @@ namespace wuKong {
      */
     //% weight=84
     //% blockId=setServoAngle block="Set %servoType servo %servo angle to %angle"
-    //% angle.shadow="protractorPicker"
+    //% angle.min=0 angle.max=360
     export function setServoAngle(servoType: ServoTypeList, servo: ServoList, angle: number): void {
         let buf = pins.createBuffer(4);
         if (servo == 0) {
