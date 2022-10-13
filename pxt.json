@@ -1,6 +1,6 @@
 {
     "name": "wuKong",
-    "version": "1.4.9",
+    "version": "1.5.0",
     "description": "micro:bit multifunctional expansion board WuKong",
     "license": "MIT",
     "dependencies": {
@@ -13,6 +13,7 @@
         "README.md",
         "_locales/zh/wuKong-jsdoc-strings.json",
         "_locales/zh/wuKong-strings.json"
+        "_locales/es-ES/wuKong-strings.json"
     ],
     "testFiles": [
         "test.ts"
