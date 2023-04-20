@@ -40,6 +40,7 @@
   "wuKong.setLightMode|block": "Establece modo de luz a %mode", 
   "wuKong.setMotorSpeed|block": "Establece motor %motor a velocidad %speed", 
   "wuKong.setServoAngle|block": "Establece servo %servo a ángulo %angle", 
+  "wuKong.setServoSpeed|block": "Establece Continuo servo %servo a velocidad %speed\\%",
   "wuKong.stopAllMotor|block": "Detener todos los motores", 
   "wuKong.stopMotor|block": "Detener motor %motor", 
   "wuKong|block": "wuKong", 

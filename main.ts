@@ -634,5 +634,18 @@ namespace wuKong {
                 break;
         }
     }
+    
+    /*
+     * TODO: Setting the speed of a servo motor. 
+     * @param servo A servo in the ServoList , eg: ServoList.S1
+     * @param angel Angle of servo motor , eg: 100
+     */
+    //% weight=71
+    //% blockId=setServoSpeed block="Set continuous rotation servo %servo speed to %speed\\%"
+    //% speed.min=-100 speed.max=100
+    export function setServoSpeed(servo: ServoList, speed: number): void {
+        speed = Math.map(speed, -100, 100, 0, 180)
+        setServoAngle(ServoTypeList._180, servo, speed)
+    }
 }
  
