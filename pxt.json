@@ -13,6 +13,8 @@
         "README.md",
         "_locales/zh/wuKong-jsdoc-strings.json",
         "_locales/zh/wuKong-strings.json",
+        "_locales/cs/wuKong-jsdoc-strings.json",
+        "_locales/cs/wuKong-strings.json",
         "_locales/es-ES/wuKong-strings.json"
     ],
     "testFiles": [
@@ -20,7 +22,7 @@
     ],
     "public": true,
     "targetVersions": {
-        "target": "5.0.12",
+        "target": "4.0.18",
         "targetId": "microbit"
     },
     "supportedTargets": [
