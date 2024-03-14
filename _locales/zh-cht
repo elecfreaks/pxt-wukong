@@ -38,7 +38,7 @@
   "wuKong.mecanumSpeed|block": "設置麥克納姆輪小車 %wheel 輪 速度為 %speed",
   "wuKong.mecanumSpin|block": "設置麥克納姆輪小車向 %Turn 旋轉 速度為 %speed",
   "wuKong.mecanumStop|block": "麥克納姆輪小車停止",
-  "wuKong.mecanumWheel|block": "設置麦克纳姆轮|左前 %LeftFront|左後 %LeftRear|右前 %RightFront|右後 %RightRear",
+  "wuKong.mecanumWheel|block": "設置麥克納姆輪|左前 %LeftFront|左後 %LeftRear|右前 %RightFront|右後 %RightRear",
   "wuKong.setAllMotor|block": "設置馬達M1的速度為 %m1speed 馬達M2的 速度為 %m2speed",
   "wuKong.setLightMode|block": "設置氛圍燈模式 %mode",
   "wuKong.setMotorSpeed|block": "設置馬達 %motor 速度為 %speed",
