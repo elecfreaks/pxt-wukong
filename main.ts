@@ -57,7 +57,7 @@ namespace wuKong {
 
     /**
      * TODO: Set the on-board LED display mode. 
-     * @param mode breath or off , eg: LightMode.BREATH
+     * @param mode breath or off 
      */
     //% weight=90
     //% blockId="setLightMode" block="Set light mode to %mode"
@@ -95,7 +95,7 @@ namespace wuKong {
 
 	/**
     * TODO: Set the brightness of on-board LED lamp.
-    * @param light brightness, eg: 100
+    * @param light brightness
     */
     //% weight=89
     //% blockId=lightIntensity block="Set light intensity to %light"
@@ -116,8 +116,8 @@ namespace wuKong {
 
 	/**
      * TODO: Set the speed of M1 or M2 motor. 
-     * @param motor M1 or M2 motor , eg: MotorList.M1
-     * @param speed motor speed, eg: 100
+     * @param motor M1 or M2 motor 
+     * @param speed motor speed
      */
     //% weight=88
     //% blockId=setMotorSpeed block="Set motor %motor speed to %speed"
@@ -153,8 +153,8 @@ namespace wuKong {
     }
 	/*
      * TODO: Set both of M1 and M2 motors speed. 
-     * @param m1speed M1 motor speed , eg: 100
-     * @param m2speed M2 motor speed, eg: -100
+     * @param m1speed M1 motor speed 
+     * @param m2speed M2 motor speed
      */
     //% weight=87
     //% blockId=setAllMotor block="set motor M1 speed %m1speed M2 speed %m2speed"
@@ -167,7 +167,7 @@ namespace wuKong {
 
 	/*
      * TODO: Stop one of the motors. 
-     * @param motor A motor in the MotorList , eg: MotorList.M1
+     * @param motor A motor in the MotorList
      */
     //% weight=86
     //% blockId=stopMotor block="Stop motor %motor"
@@ -186,8 +186,8 @@ namespace wuKong {
 
 	/*
      * TODO: Setting the angle of a servo motor. 
-     * @param servo A servo in the ServoList , eg: ServoList.S1
-     * @param angel Angle of servo motor , eg: 90
+     * @param servo A servo in the ServoList 
+     * @param angel Angle of servo motor 
      */
     //% weight=84
     //% blockId=setServoAngle block="Set %servoType servo %servo angle to %angle"
@@ -294,10 +294,10 @@ namespace wuKong {
     }
     /**
     * TODO: Set Mecanum wheel car 
-    * @param LeftFront A servo in the ServoList , eg: wuKong.ServoList.S1
-    * @param LeftRear A servo in the ServoList , eg: wuKong.ServoList.S2
-    * @param RightFront A servo in the ServoList , eg: wuKong.ServoList.S3
-    * @param RightRear A servo in the ServoList , eg: wuKong.ServoList.S4
+    * @param LeftFront A servo in the ServoList 
+    * @param LeftRear A servo in the ServoList 
+    * @param RightFront A servo in the ServoList
+    * @param RightRear A servo in the ServoList
     */
     //% block="Set Mecanum wheel|Left Front %LeftFront|Left Rear %LeftRear|Right Front %RightFront|Right Rear %RightRear"
     //% subcategory=Mecanum weight=100
@@ -637,8 +637,8 @@ namespace wuKong {
     
     /*
      * TODO: Setting the speed of a servo motor. 
-     * @param servo A servo in the ServoList , eg: ServoList.S1
-     * @param angel Angle of servo motor , eg: 100
+     * @param servo A servo in the ServoList 
+     * @param angel Angle of servo motor 
      */
     //% weight=71
     //% blockId=setServoSpeed block="Set continuous rotation servo %servo speed to %speed\\%"
