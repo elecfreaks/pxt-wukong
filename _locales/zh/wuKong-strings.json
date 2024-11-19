@@ -43,6 +43,7 @@
   "wuKong.setLightMode|block": "设置氛围灯模式 %mode",
   "wuKong.setMotorSpeed|block": "设置电机 %motor 速度为 %speed",
   "wuKong.setServoAngle|block": "设置 %servoType 舵机 %servo 角度为 %angle",
+  "wuKong.setServoSpeed|block": "设置 连续转动 舵机 %servo 速度为 %speed\\%",
   "wuKong.stopAllMotor|block": "停止所有电机",
   "wuKong.stopMotor|block": "停止电机 %motor",
   "wuKong|block": "悟空",
