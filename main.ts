@@ -187,7 +187,7 @@ namespace wuKong {
 	/*
      * TODO: Setting the angle of a servo motor. 
      * @param servo A servo in the ServoList 
-     * @param angel Angle of servo motor 
+     * @param angle Angle of servo motor 
      */
     //% weight=84
     //% blockId=setServoAngle block="Set %servoType servo %servo angle to %angle"
@@ -638,7 +638,7 @@ namespace wuKong {
     /*
      * TODO: Setting the speed of a servo motor. 
      * @param servo A servo in the ServoList 
-     * @param angel Angle of servo motor 
+     * @param angle Angle of servo motor 
      */
     //% weight=71
     //% blockId=setServoSpeed block="Set continuous rotation servo %servo speed to %speed\\%"
