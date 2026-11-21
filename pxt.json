@@ -21,7 +21,7 @@
         "_locales/ko/wuKong-strings.json",
         "_locales/ja/wuKong-strings.json",
         "_locales/ja/wuKong-jsdoc-strings.json",
-        "_locales/nl/wuKong-strings.json",
+        "_locales/nl/wuKong-strings.json"
     ],
     "testFiles": [
         "test.ts"
