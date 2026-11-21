@@ -42,6 +42,7 @@
   "wuKong.setServoAngle|block": "zet servo %servo hoek op %angle",
   "wuKong.stopAllMotor|block": "stop alle motoren",
   "wuKong.stopMotor|block": "stop motor %motor",
+  "wuKong.setServoSpeed|block": "zet continu draaiende servo %servo snelheid op %speed\\%",
   "wuKong|block": "wuKong",
   "{id:category}WuKong": "WuKong",
   "{id:subcategory}Mecanum": "Mecanum"
